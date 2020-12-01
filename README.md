@@ -1,0 +1,1 @@
+Notes on [Rob Isenberg, _Docker for Rails Developers_](https://www.amazon.com/Docker-Rails-Developers-Applications-Everywhere/dp/1680502735/ref=sr_1_2?dchild=1&keywords=docker+for+rails+developers&qid=1606781956&sr=8-2)
