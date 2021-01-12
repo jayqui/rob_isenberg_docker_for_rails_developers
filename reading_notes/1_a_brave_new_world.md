@@ -23,12 +23,21 @@ List running containers, including stopped ones
 docker ps -a
 ```
 #### docker rm
-Removes containers
+Removes a container if given a SHA
+
+#### --> docker prune
+Removes all stopped containers
 
 ## Generating a New Rails App Without Ruby Installed
 
-Create an ephemeral (`--rm`) container from the `ruby:2.6` image with a terminal emulator (`-t`), and, (as the `root` user) run a bash session. Mount a volume (`-v`), basically sharing a portion of my local filesystem with the container—specifically, mounting the current directory in the container's `/usr/src/app`. Tell Docker to forward the bash session's CLI input on ot the Docker daemon (`-i`).
+Create a container that is interactive i.e. keeps STDIN open (`-i`), has a terminal emulator (`-t`), is ephemeral (`--rm`), and mounts a volume (`-v`), based on the `ruby:2.6` image.
+
 ```ruby
 docker run -i -t --rm -v ${PWD}:/usr/src/app/ ruby:2.6 bash
 ```
 
+Mounting a volume (`-v`) basically means sharing a portion of my local filesystem with the container. Specifically, for this example, we mounted the current directory in the container's `/usr/src/app`. "-v ${PWD}:/usr/src/app says, “Mount our current directory inside the container at /usr/src/app” (${PWD} is a Unix environment variable pointing to the current directory)".
+
+Tell Docker to forward the bash session's CLI input on ot the Docker daemon (`-i`).
+
+GOT_UP_TO_PAGE: 43 (DONE)
